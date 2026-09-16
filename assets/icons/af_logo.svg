@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 200" width="100%" height="100%">
+  <!-- Transparent Background -->
+  <g fill="none" fill-rule="evenodd">
+    <!-- AF Monogram Group -->
+    <g transform="translate(10, 15)">
+      <!-- Top Bar of F -->
+      <path d="M 195 15 L 340 15 L 335 55 L 210 55 L 215 15 Z" fill="#161921"/>
+
+      <!-- Top Triangle / Head of A -->
+      <path d="M 125 15 L 180 15 L 175 55 L 140 55 L 130 90 L 95 90 Z" fill="#161921"/>
+      <path d="M 145 15 L 180 15 L 175 55 L 145 55 Z" fill="#161921"/>
+
+      <!-- Upper Right Block of A -->
+      <path d="M 148 15 L 182 15 L 176 60 L 152 60 Z" fill="#161921"/>
+
+      <!-- Master Dynamic Swoosh (Connecting A and F) -->
+      <path d="M 15 140 C 25 105, 60 70, 115 65 L 315 65 L 310 105 L 85 105 C 55 108, 40 120, 35 140 Z" fill="#161921"/>
+      
+      <!-- Subtle Brand Highlight on Swoosh Arc -->
+      <path d="M 115 65 L 315 65 L 310 72 L 115 72 Z" fill="#fb6514"/>
+
+      <!-- Bottom Stem 1 (Under A) -->
+      <path d="M 120 115 L 155 115 L 145 155 L 110 155 Z" fill="#161921"/>
+
+      <!-- Bottom Stem 2 (Under F) -->
+      <path d="M 180 115 L 215 115 L 205 155 L 170 155 Z" fill="#161921"/>
+    </g>
+
+    <!-- Brand Typography Next to / Under Logo -->
+    <text x="245" y="65" font-family="'Impact', 'Oswald', sans-serif" font-size="44" font-weight="700" fill="#161921" letter-spacing="1">
+      AF <tspan fill="#fb6514">HVAC</tspan>
+    </text>
+    <text x="248" y="95" font-family="'Outfit', sans-serif" font-size="14" font-weight="700" fill="#646464" letter-spacing="3">
+      &amp; ELECTRICAL
+    </text>
+    <text x="248" y="120" font-family="'Outfit', sans-serif" font-size="10.5" font-weight="600" fill="#fb6514" letter-spacing="1.5">
+      HEATING • COOLING • 24/7
+    </text>
+  </g>
+</svg>

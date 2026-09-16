@@ -1,0 +1,36 @@
+:root {
+  /* ==========================================================================
+     EXACT BRAND COLOR PALETTE
+     ========================================================================== */
+  --color-primary: #fb6514;          /* Signature vibrant KSR orange */
+  --color-primary-hover: #e05307;    /* Darker orange hover */
+  --color-primary-light: rgba(251, 101, 20, 0.1);
+
+  --color-secondary: #161921;        /* Deep KSR navy / black header background */
+  --color-secondary-hover: #0c0e13;
+  --color-dark-banner: #10141d;
+
+  --color-text-main: #646464;        /* Body text gray */
+  --color-text-dark: #161921;        /* Headings black */
+  --color-text-muted: #888888;
+  --color-text-light: #ffffff;
+
+  --color-border: #e2e8f0;
+  --color-border-light: #eeeeee;
+
+  /* ==========================================================================
+     TYPOGRAPHY (Exact fonts: Impact for bold titles, Outfit for clean text)
+     ========================================================================== */
+  --font-heading: 'Impact', 'Oswald', -apple-system, sans-serif;
+  --font-body: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* ==========================================================================
+     LAYOUT & SHAPE CONSTRAINTS (Exact sharp edges as requested)
+     ========================================================================== */
+  --container-max-width: 1280px;
+  --radius-none: 0px;                /* Strict sharp corners */
+  --radius-sm: 2px;
+  --radius-circle: 50%;
+
+  --transition: all 0.25s ease-in-out;
+}

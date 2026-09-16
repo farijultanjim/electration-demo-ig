@@ -1,0 +1,487 @@
+/* ==========================================================================
+   EXACT 3-TIER HEADER SYSTEM WITH ACCURATE DROPDOWNS
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   TIER 1: TOP SPLIT BAR (Dark Navy Left + Angled Orange Right)
+   -------------------------------------------------------------------------- */
+.top-bar-wrapper {
+  background-color: var(--color-secondary);
+  position: relative;
+  overflow: hidden;
+  font-size: 13px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.top-bar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 0;
+  max-width: 100%;
+}
+
+.top-bar-left {
+  display: flex;
+  align-items: center;
+  padding: 8px 24px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  flex-shrink: 0;
+}
+
+.top-bar-right {
+  display: flex;
+  align-items: center;
+  background-color: var(--color-primary);
+  padding: 8px 30px 8px 45px;
+  clip-path: polygon(25px 0%, 100% 0%, 100% 100%, 0% 100%);
+  gap: 1.25rem;
+  margin-left: auto;
+}
+
+.top-info-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.top-info-item svg {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+}
+
+.top-bar-divider {
+  width: 1px;
+  height: 14px;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.top-social-link {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: lowercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.top-social-link:hover {
+  text-decoration: underline;
+}
+
+/* --------------------------------------------------------------------------
+   TIER 2: BRAND & CONTACT ROW
+   -------------------------------------------------------------------------- */
+.header-middle {
+  background-color: #ffffff;
+  padding: 16px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.header-middle-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* KSR-Style Bespoke Monogram Logo */
+.brand-logo-ksr {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo-ksr-svg {
+  width: 170px;
+  height: auto;
+}
+
+.contact-widgets {
+  display: flex;
+  align-items: center;
+  gap: 2.25rem;
+}
+
+.contact-widget-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.widget-icon-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: rgba(251, 101, 20, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.widget-icon-circle svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+.widget-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.widget-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: #888888;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+}
+
+.widget-value {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-secondary);
+  line-height: 1.3;
+}
+
+.widget-value a {
+  color: var(--color-secondary);
+}
+
+.widget-value a:hover {
+  color: var(--color-primary);
+}
+
+/* --------------------------------------------------------------------------
+   TIER 3: MAIN NAVIGATION BAR WITH DROPDOWNS
+   -------------------------------------------------------------------------- */
+.header-nav-bar {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  position: relative;
+  z-index: 1000;
+}
+
+.nav-bar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.main-navigation {
+  display: flex;
+  align-items: center;
+  gap: 2.2rem;
+  margin-left: auto;
+  margin-right: 2rem;
+}
+
+.nav-item {
+  position: relative;
+  list-style: none;
+}
+
+.nav-item-link {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 18px 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  position: relative;
+  cursor: pointer;
+}
+
+.nav-item-link:hover,
+.nav-item-link.active,
+.nav-item:hover > .nav-item-link {
+  color: var(--color-primary);
+}
+
+.nav-plus {
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: 13px;
+  margin-left: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   DROPDOWN MENUS (Exact warm peach background #FFF6F0, orange uppercase links)
+   -------------------------------------------------------------------------- */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff6f0;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  border-top: 2px solid var(--color-primary);
+  border-radius: 0;
+  padding: 14px 0;
+  min-width: 200px;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+  pointer-events: none;
+  z-index: 1001;
+}
+
+.nav-item:hover > .dropdown-menu,
+.nav-item:focus-within > .dropdown-menu {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.dropdown-item {
+  list-style: none;
+  position: relative;
+}
+
+.dropdown-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 24px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.dropdown-link:hover,
+.dropdown-item:hover > .dropdown-link {
+  background-color: rgba(251, 101, 20, 0.12);
+  color: #d1541d;
+}
+
+/* --------------------------------------------------------------------------
+   SERVICES 2-TIER FLYOUT SUBMENU
+   -------------------------------------------------------------------------- */
+.dropdown-flyout {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background-color: #fff6f0;
+  box-shadow: 5px 10px 25px rgba(0, 0, 0, 0.15);
+  border-top: 2px solid var(--color-primary);
+  border-radius: 0;
+  padding: 12px 0;
+  min-width: 250px;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateX(8px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+  pointer-events: none;
+  z-index: 1002;
+}
+
+.dropdown-item:hover > .dropdown-flyout {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+.flyout-link {
+  display: block;
+  padding: 8px 22px;
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--color-secondary);
+  text-transform: capitalize;
+  white-space: nowrap;
+  transition: var(--transition);
+}
+
+.flyout-link:hover {
+  background-color: rgba(251, 101, 20, 0.12);
+  color: var(--color-primary);
+  padding-left: 26px;
+}
+
+/* --------------------------------------------------------------------------
+   SERVICE AREA MULTI-COLUMN GRID DROPDOWN (4 Columns Wide)
+   -------------------------------------------------------------------------- */
+.dropdown-grid-wide {
+  min-width: 650px;
+  padding: 20px 24px;
+  left: -120px;
+}
+
+.service-area-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px 24px;
+}
+
+.area-link {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 4px 0;
+  transition: color 0.15s ease;
+}
+
+.area-link:hover {
+  color: #161921;
+  text-decoration: underline;
+}
+
+/* Schedule Now CTA */
+.nav-schedule-btn {
+  background-color: var(--color-secondary);
+  color: #ffffff;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.75px;
+  padding: 16px 28px;
+  border-radius: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.nav-schedule-btn:hover {
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+
+/* Mobile Hamburger Toggle */
+.mobile-nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 26px;
+  height: 18px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.mobile-nav-toggle span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: var(--color-secondary);
+}
+
+/* Responsive Header */
+@media (max-width: 1100px) {
+  .contact-widgets {
+    gap: 1.25rem;
+  }
+  .top-bar-right {
+    padding-left: 30px;
+    gap: 0.75rem;
+    font-size: 12px;
+  }
+  .main-navigation {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 991px) {
+  .top-bar-right {
+    display: none;
+  }
+  .contact-widgets {
+    display: none;
+  }
+  .mobile-nav-toggle {
+    display: flex;
+  }
+  .main-navigation {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 320px;
+    height: 100vh;
+    background-color: #ffffff;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 5rem 2rem 2rem;
+    box-shadow: -10px 0 25px rgba(0,0,0,0.15);
+    transition: right var(--transition);
+    z-index: 1050;
+    gap: 0.5rem;
+    margin: 0;
+    overflow-y: auto;
+  }
+  .main-navigation.active {
+    right: 0;
+  }
+  .nav-item {
+    width: 100%;
+  }
+  .nav-item-link {
+    width: 100%;
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f0f0;
+    justify-content: space-between;
+  }
+  .dropdown-menu {
+    position: static;
+    display: none;
+    box-shadow: none;
+    padding: 8px 12px;
+    min-width: 100%;
+    opacity: 1;
+    transform: none;
+  }
+  .nav-item.mobile-open > .dropdown-menu {
+    display: block;
+  }
+  .dropdown-grid-wide {
+    min-width: 100%;
+    left: 0;
+  }
+  .service-area-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .dropdown-flyout {
+    position: static;
+    display: none;
+    box-shadow: none;
+    padding: 6px 12px;
+    min-width: 100%;
+    opacity: 1;
+    transform: none;
+  }
+  .dropdown-item.mobile-open > .dropdown-flyout {
+    display: block;
+  }
+  .nav-schedule-btn {
+    display: none;
+  }
+}
