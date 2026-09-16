@@ -192,13 +192,19 @@
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
+  box-shadow: none;
   transition: background-color 0.25s ease, transform 0.2s ease;
 }
 
 .btn-see-offers:hover {
   background-color: #e05307;
+  box-shadow: none;
   transform: translateY(-2px);
+}
+
+.btn-see-offers:hover .btn-arrow-icon {
+  transform: translate(2px, -2px);
 }
 
 /* --------------------------------------------------------------------------
@@ -490,7 +496,7 @@
 .btn-about-more {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   background-color: #fb6514;
   color: #ffffff;
   font-family: var(--font-body);
@@ -499,12 +505,18 @@
   padding: 13px 30px;
   border-radius: 2px;
   text-decoration: none;
+  box-shadow: none;
   transition: background-color 0.25s ease, transform 0.2s ease;
 }
 
 .btn-about-more:hover {
   background-color: #e05307;
+  box-shadow: none;
   transform: translateY(-2px);
+}
+
+.btn-about-more:hover .btn-arrow-icon {
+  transform: translate(2px, -2px);
 }
 
 /* Overlapping Bottom Certification Bar */
@@ -553,7 +565,7 @@
 }
 
 /* --------------------------------------------------------------------------
-   WHY CHOOSE KSR HVAC & ELECTRICAL (5 Core Values & Montage)
+   WHY CHOOSE AF HVAC & ELECTRICAL (5 Core Values & Montage)
    -------------------------------------------------------------------------- */
 .values-section {
   background-color: #ffffff;
@@ -865,6 +877,7 @@
 
 /* Individual Blog Card */
 .blog-card {
+  font-family: var(--font-body);
   background-color: #f4f7fb;
   color: #101828;
   flex: 0 0 270px;
@@ -872,15 +885,20 @@
   display: flex;
   flex-direction: column;
   border-radius: 2px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: none;
+  transition: transform 0.25s ease;
   overflow: hidden;
   padding: 14px 14px 18px 14px;
 }
 
+.blog-card,
+.blog-card * {
+  font-family: var(--font-body);
+}
+
 .blog-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.18);
+  box-shadow: none;
 }
 
 .blog-card-media {
@@ -918,19 +936,19 @@
   width: 48px;
   height: 48px;
   z-index: 2;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: none;
 }
 
 .blog-date-badge .badge-day {
-  font-family: var(--font-heading);
-  font-size: 17px;
-  font-weight: 400;
+  font-family: var(--font-body) !important;
+  font-size: 18px;
+  font-weight: 800;
   line-height: 1;
   display: block;
 }
 
 .blog-date-badge .badge-month {
-  font-family: var(--font-body);
+  font-family: var(--font-body) !important;
   font-size: 11px;
   font-weight: 700;
   line-height: 1;
@@ -973,13 +991,14 @@
 }
 
 /* Blog Post Title */
+.blog-card .blog-post-title,
 .blog-post-title {
-  font-family: var(--font-heading);
-  font-size: 15.5px;
-  line-height: 1.25;
+  font-family: var(--font-body) !important;
+  font-size: 15px;
+  line-height: 1.35;
   text-transform: uppercase;
   color: #101828;
-  font-weight: 400;
+  font-weight: 700 !important;
   letter-spacing: 0.25px;
   margin: 0 0 18px 0;
   min-height: 58px;
@@ -990,27 +1009,30 @@
 }
 
 /* Read More Button */
+.blog-card .blog-read-btn,
 .blog-read-btn {
   align-self: flex-start;
   background-color: #fb6514;
   color: #ffffff;
-  font-family: var(--font-heading);
-  font-weight: 700;
+  font-family: var(--font-body) !important;
+  font-weight: 700 !important;
   font-size: 12.5px;
   letter-spacing: 0.5px;
   text-transform: uppercase;
   padding: 9px 18px;
   border-radius: 2px;
   text-decoration: none;
+  box-shadow: none;
   transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 .blog-read-btn:hover {
   background-color: #e05307;
+  box-shadow: none;
   transform: translateY(-2px);
 }
 
-/* Bottom Action Button (View All ↗) */
+/* Bottom Action Button (View All) */
 .blog-bottom-action {
   position: relative;
   z-index: 5;
@@ -1023,22 +1045,39 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 8px;
   background-color: #0f141d;
   color: #ffffff;
   font-family: var(--font-body);
   font-weight: 700;
   font-size: 14px;
   text-transform: capitalize;
-  padding: 13px 36px;
+  padding: 13px 34px;
   border-radius: 2px;
   text-decoration: none;
+  box-shadow: none;
   transition: background-color 0.25s ease, transform 0.2s ease;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.btn-arrow-icon,
+.blog-view-all-btn .blog-btn-icon {
+  width: 15px;
+  height: 15px;
+  color: inherit;
+  display: inline-block;
+  vertical-align: middle;
+  transition: transform 0.2s ease;
 }
 
 .blog-view-all-btn:hover {
   background-color: #1e2532;
+  box-shadow: none;
   transform: translateY(-2px);
+}
+
+.blog-view-all-btn:hover .blog-btn-icon,
+.blog-view-all-btn:hover .btn-arrow-icon {
+  transform: translate(2px, -2px);
 }
 
 /* --------------------------------------------------------------------------
@@ -1068,60 +1107,88 @@
 }
 
 .faq-item {
-  background-color: #f8fafc;
-  border: 1px solid #e2e8f0;
+  background-color: transparent;
+  border-radius: 0;
   overflow: hidden;
+  border: none;
   transition: var(--transition);
-}
-
-.faq-item.active {
-  border-color: var(--color-primary);
-  background-color: #ffffff;
 }
 
 .faq-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 18px 24px;
+  padding: 16px 24px;
+  background-color: #f2f4f7;
   cursor: pointer;
   user-select: none;
+  transition: background-color 0.25s ease;
+}
+
+.faq-item.active .faq-header {
+  background-color: var(--color-primary); /* #fb6514 */
 }
 
 .faq-question {
-  font-family: var(--font-heading);
-  font-size: 17px;
+  font-family: Impact, sans-serif !important;
+  font-style: normal;
+  font-weight: 500 !important;
+  font-size: 24px !important;
+  line-height: 26px !important;
   color: var(--color-secondary);
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  transition: color 0.25s ease;
+}
+
+.faq-item.active .faq-question {
+  color: rgb(255, 255, 255) !important;
 }
 
 .faq-icon {
-  font-family: var(--font-body);
-  font-size: 20px;
-  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   color: var(--color-primary);
-  transition: transform 0.25s ease;
+  transition: transform 0.3s ease, color 0.25s ease;
+}
+
+.faq-icon svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
 }
 
 .faq-item.active .faq-icon {
-  transform: rotate(45deg);
+  color: rgb(255, 255, 255);
+  transform: rotate(180deg);
 }
 
 .faq-body {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s cubic-bezier(0, 1, 0, 1), padding 0.3s ease;
+  transition: max-height 0.35s ease, padding 0.3s ease;
   padding: 0 24px;
-  font-size: 14.5px;
+  font-family: var(--font-body);
+  font-size: 15px;
   line-height: 1.6;
-  color: #475467;
+  color: #646464;
+  background-color: #ffffff;
+  border: 1px solid transparent;
+  border-top: none;
 }
 
 .faq-item.active .faq-body {
   max-height: 300px;
-  padding: 0 24px 20px 24px;
-  transition: max-height 0.3s ease-in-out, padding 0.3s ease;
+  padding: 20px 24px;
+  border-color: #e5e7eb;
+}
+
+@media (max-width: 600px) {
+  .faq-question {
+    font-size: 20px !important;
+    line-height: 22px !important;
+  }
 }
 
 /* Responsive Sections */

@@ -2,11 +2,11 @@
   /* ==========================================================================
      EXACT BRAND COLOR PALETTE
      ========================================================================== */
-  --color-primary: #fb6514;          /* Signature vibrant KSR orange */
+  --color-primary: #fb6514;          /* Signature vibrant AF orange */
   --color-primary-hover: #e05307;    /* Darker orange hover */
   --color-primary-light: rgba(251, 101, 20, 0.1);
 
-  --color-secondary: #161921;        /* Deep KSR navy / black header background */
+  --color-secondary: #161921;        /* Deep AF navy / black header background */
   --color-secondary-hover: #0c0e13;
   --color-dark-banner: #10141d;
 
