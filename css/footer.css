@@ -524,6 +524,63 @@
 }
 
 /* --------------------------------------------------------------------------
+   MAP SECTION — MOBILE RESPONSIVE
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .map-section {
+    padding: 40px 0 !important;
+  }
+
+  .map-container-layout {
+    display: flex !important;
+    flex-direction: column !important;
+    grid-template-columns: unset !important;
+    min-height: unset !important;
+  }
+
+  /* Show the map FIRST on mobile (it's the 2nd child in HTML) */
+  .map-frame-wrapper {
+    order: -1 !important;
+    min-height: 300px !important;
+    height: 300px !important;
+  }
+
+  .map-sidebar-orange {
+    order: 1 !important;
+    padding: 30px 20px 30px 20px !important;
+  }
+
+  .map-sidebar-title {
+    font-size: 26px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .map-sidebar-subtitle {
+    font-size: 14px !important;
+    margin-bottom: 18px !important;
+  }
+
+  .map-cities-card {
+    height: 220px !important;
+    padding: 20px 16px 20px 20px !important;
+  }
+
+  .map-cities-list {
+    gap: 18px !important;
+  }
+
+  .map-city-item span {
+    font-size: 15px !important;
+    letter-spacing: 0.5px !important;
+  }
+
+  .map-city-item .map-pin-icon {
+    width: 18px !important;
+    height: 18px !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
    RESPONSIVE BREAKPOINTS
    -------------------------------------------------------------------------- */
 @media (max-width: 1200px) {
@@ -563,34 +620,47 @@
 }
 
 @media (max-width: 768px) {
+  /* Portrait: bottom-right corner of footer */
   .footer-portrait-wrapper {
-    position: static;
-    display: flex;
-    justify-content: center;
-    left: 0;
-    margin-top: 30px;
-    margin-bottom: 10px;
+    position: absolute !important;
+    bottom: 0 !important;
+    right: 0 !important;
+    left: auto !important;
+    display: block !important;
+    margin: 0 !important;
+    z-index: 2;
+    pointer-events: none;
+    line-height: 0;
   }
   .footer-portrait-img {
-    width: 220px;
-    max-height: 290px;
-    object-position: center;
+    width: 180px !important;
+    max-height: 320px !important;
+    object-position: bottom right !important;
+    object-fit: contain !important;
   }
+
   .footer-container {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
+
+  /* Hide the left block (logo, tagline, hours) on mobile – footer goes straight to newsletter + columns */
+  .footer-main-layout {
+    grid-template-columns: 1fr !important;
+  }
   .footer-left-block {
-    text-align: center;
-    align-items: center;
+    display: none !important;
   }
-  .footer-brand-logo {
-    display: flex;
-    justify-content: center;
+  .footer-right-block {
+    border-left: none !important;
+    padding-left: 0 !important;
   }
-  .footer-columns-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
+
+  /* Newsletter row */
+  .footer-newsletter-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 1rem !important;
   }
   .newsletter-form {
     width: 100%;
@@ -599,9 +669,31 @@
     width: 100%;
     min-width: 0;
   }
+
+  /* 2-column grid for Contact Us + Quick Links, Popular Services full-width below */
+  .footer-columns-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 30px !important;
+  }
+  /* 3rd column (Popular Services) spans full width */
+  .footer-nav-col:nth-child(3) {
+    grid-column: 1 / -1 !important;
+    padding-bottom: 60px !important; /* space for the portrait overlap */
+  }
+
   .footer-bottom-strip {
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    align-items: flex-start !important;
+    text-align: left !important;
+  }
+
+  /* Nav column titles: ensure light color on dark bg */
+  .footer-col-title {
+    color: #ffffff !important;
+  }
+
+  .footer-bottom-links {
+    align-items: flex-start !important;
+    text-align: left !important;
   }
 }

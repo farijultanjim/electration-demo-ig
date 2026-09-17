@@ -436,10 +436,11 @@
   text-transform: uppercase;
 }
 
-.community-title {
+.community-title,
+.community-title .title-line-1 {
   font-family: var(--font-heading);
   font-size: clamp(1.85rem, 2.7vw, 2.45rem);
-  color: #ffffff;
+  color: #ffffff !important;
   text-transform: uppercase;
   line-height: 1.15;
   margin-bottom: 20px;
@@ -448,6 +449,7 @@
 
 .title-line-1 {
   display: inline-block;
+  color: #ffffff !important;
 }
 
 @media (min-width: 641px) {
@@ -457,7 +459,7 @@
 }
 
 .community-title .text-orange {
-  color: #fb6514;
+  color: #fb6514 !important;
 }
 
 .community-text-block {
@@ -1242,24 +1244,53 @@
     min-height: auto;
   }
 
+  .community-section {
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .community-split-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: auto;
+    width: 100%;
+    position: relative;
+  }
+
   .community-col-portrait {
-    min-height: 380px;
-    height: 380px;
+    min-height: 440px;
+    height: 440px;
     order: 2;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin: 10px auto 0;
+    overflow: visible;
   }
 
   .owner-portrait-img {
-    position: relative;
-    right: auto;
+    position: absolute;
     bottom: 0;
-    height: 380px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 440px;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: bottom center;
+    display: block;
     margin: 0 auto;
+    z-index: 10;
   }
 
   .community-col-content {
-    padding: 60px 24px 30px;
+    padding: 60px 24px 20px;
     order: 1;
     justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .community-content-inner {
@@ -1267,13 +1298,57 @@
   }
 
   .community-cert-bar {
-    position: relative;
-    bottom: auto;
-    left: auto;
-    transform: none;
-    margin: 20px auto 0;
-    width: fit-content;
+    position: absolute;
+    bottom: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 36px);
+    max-width: 360px;
+    background: #ffffff;
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.22);
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    z-index: 25;
+    border-radius: 2px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     order: 3;
+  }
+
+  .cert-bar-item {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 12px 4px !important;
+    border-right: 1px solid #f1f5f9 !important;
+    min-width: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .cert-bar-item:last-child {
+    border-right: none !important;
+  }
+
+  .cert-bar-icon {
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 6px;
+  }
+
+  .cert-bar-label {
+    font-family: var(--font-body) !important;
+    font-size: 10px !important;
+    font-weight: 800 !important;
+    color: #101828 !important;
+    letter-spacing: 0.2px !important;
+    text-transform: uppercase !important;
+    white-space: nowrap !important;
+    text-align: center !important;
   }
 
   .values-split-layout {
@@ -1315,17 +1390,6 @@
   }
   .comfort-badge-price {
     font-size: 32px;
-  }
-  .community-cert-bar {
-    width: 100%;
-    display: flex;
-  }
-  .cert-bar-item {
-    padding: 10px 8px;
-    min-width: 0;
-  }
-  .cert-bar-label {
-    font-size: 9px;
   }
   .values-cards-row {
     grid-template-columns: repeat(2, 1fr);
