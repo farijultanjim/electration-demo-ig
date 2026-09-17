@@ -23,8 +23,8 @@ body {
 }
 
 /* Typography (Impact font naturally black/bold; must be at most weight 400 across whole project) */
-h1, h2, h3, h4, h5, h6,
-[class*="-title"],
+h1:not(.hero-title), h2, h3, h4, h5, h6,
+[class*="-title"]:not(.hero-title):not(.hero-title-line),
 [class*="-heading"],
 [class*="heading-"],
 .process-step-name,
@@ -39,8 +39,7 @@ h1, h2, h3, h4, h5, h6,
 .faq-title,
 .map-sidebar-title,
 .footer-col-title,
-.newsletter-title,
-.hero-title {
+.newsletter-title {
   font-family: var(--font-heading);
   color: var(--color-text-dark);
   text-transform: uppercase;

@@ -1,84 +1,87 @@
 /* ==========================================================================
-   EXACT HERO SECTION STYLING
+   EXACT HERO SECTION STYLING (Pixel-Matched to Desktop & Mobile References)
    ========================================================================== */
 .hero-section {
   position: relative;
   background-color: #121620;
-  background: linear-gradient(
-    135deg,
-    rgba(14, 18, 26, 0.96) 0%,
-    rgba(20, 26, 38, 0.92) 100%
-  );
+  background-image: url('../assets/images/desktop-hero-bg.png');
+  background-size: cover;
+  background-position: right center;
+  background-repeat: no-repeat;
   color: #ffffff;
-  padding: 60px 0 0 0;
+  padding: 40px 0 0 0;
   overflow: hidden;
-}
-
-/* Diagonal Background Accent */
-.hero-section::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 45%;
-  height: 100%;
-  background: linear-gradient(
-    135deg,
-    rgba(251, 101, 20, 0.15) 0%,
-    rgba(251, 101, 20, 0.02) 100%
-  );
-  clip-path: polygon(30% 0, 100% 0, 100% 100%, 0% 100%);
-  z-index: 1;
-  pointer-events: none;
+  min-height: 580px;
 }
 
 .hero-container {
-  display: grid;
-  grid-template-columns: 1.15fr 0.95fr;
-  align-items: flex-end;
-  gap: 2rem;
   position: relative;
   z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  min-height: 540px;
 }
 
 /* --------------------------------------------------------------------------
    HERO LEFT CONTENT
    -------------------------------------------------------------------------- */
 .hero-content {
-  padding-bottom: 60px;
+  position: relative;
+  z-index: 4;
+  max-width: 550px;
+  padding-bottom: 45px;
 }
 
 /* ACCA Badge */
 .hero-badge-acca {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  margin-bottom: 18px;
+  gap: 12px;
+  margin-bottom: 14px;
 }
 
-.hero-badge-acca svg {
-  width: 24px;
-  height: 24px;
-  fill: #ffffff;
+.acca-logo-mark {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1;
+}
+
+.acca-brand-name {
+  font-family: var(--font-heading) !important;
+  font-size: 21px;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  letter-spacing: 0.5px;
+  line-height: 0.95;
+}
+
+.acca-swoop {
+  width: 28px;
+  height: 5px;
+  margin-top: 2px;
 }
 
 .hero-badge-text {
-  color: var(--color-primary);
+  color: #fb6514;
   font-size: 13px;
   font-weight: 700;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   text-transform: uppercase;
+  font-family: var(--font-body);
 }
 
-/* Main Heading (Exact 3-Line Presentation) */
+/* Main Heading */
 .hero-title {
-  font-family: var(--font-heading);
-  font-size: clamp(2.3rem, 4.2vw, 3.85rem);
-  line-height: 1.08;
-  color: #ffffff;
-  text-transform: uppercase;
-  margin-bottom: 20px;
+  font-family: var(--font-heading) !important;
+  font-size: clamp(2.3rem, 3.8vw, 3.8rem) !important;
+  line-height: 1.05 !important;
+  color: #ffffff !important;
+  text-transform: uppercase !important;
+  margin-bottom: 16px;
   letter-spacing: 0.5px;
+  font-weight: 400 !important;
 }
 
 .hero-title-line {
@@ -86,44 +89,48 @@
   white-space: nowrap;
 }
 
-@media (max-width: 576px) {
-  .hero-title {
-    font-size: clamp(1.85rem, 6.5vw, 2.5rem);
-  }
-  .hero-title-line {
-    white-space: normal;
-  }
+.hero-desktop-break {
+  display: inline;
+}
+
+.hero-il {
+  margin-left: 0;
+}
+
+.hero-title .text-orange {
+  color: #fb6514 !important;
 }
 
 .hero-description {
-  font-size: 15px;
-  line-height: 1.6;
-  color: #d0d5dd;
-  max-width: 580px;
-  margin-bottom: 22px;
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: #e2e8f0;
+  max-width: 500px;
+  margin-bottom: 20px;
 }
 
 /* 3 Bullet Checklist */
 .hero-bullets {
   display: flex;
-  flex-wrap: wrap;
-  gap: 1.25rem;
-  margin-bottom: 24px;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 14px;
+  margin-bottom: 22px;
 }
 
 .hero-bullet-item {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 13.5px;
+  font-size: 12.5px;
   font-weight: 600;
   color: #ffffff;
+  white-space: nowrap;
 }
 
-.hero-bullet-item svg {
+.hero-check-circle {
   width: 16px;
   height: 16px;
-  fill: var(--color-primary);
   flex-shrink: 0;
 }
 
@@ -131,8 +138,8 @@
 .hero-ratings-row {
   display: flex;
   align-items: center;
-  gap: 2rem;
-  margin-bottom: 30px;
+  gap: 16px;
+  margin-bottom: 26px;
   flex-wrap: wrap;
 }
 
@@ -140,6 +147,14 @@
   display: flex;
   align-items: center;
   gap: 10px;
+}
+
+.rating-divider-line {
+  display: block;
+  width: 1px;
+  height: 28px;
+  background-color: rgba(255, 255, 255, 0.35);
+  margin: 0 4px;
 }
 
 .rating-icon-circle {
@@ -174,7 +189,7 @@
 .rating-stars {
   display: flex;
   gap: 2px;
-  color: #f59e0b;
+  color: #fb6514;
 }
 
 .rating-stars svg {
@@ -184,7 +199,7 @@
 }
 
 .rating-text {
-  font-size: 11.5px;
+  font-size: 11px;
   color: #cbd5e1;
   font-weight: 500;
   margin-top: 1px;
@@ -194,106 +209,182 @@
 .hero-actions {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
-  margin-bottom: 36px;
+  gap: 14px;
+  margin-bottom: 28px;
   flex-wrap: wrap;
+}
+
+.btn-hero-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(14, 18, 26, 0.7);
+  border: 1.5px solid #fb6514;
+  color: #ffffff;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  padding: 12px 24px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-hero-outline:hover {
+  background: #fb6514;
+  color: #ffffff;
+}
+
+.hero-actions .btn-orange {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #fb6514;
+  border: 1.5px solid #fb6514;
+  color: #ffffff;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  padding: 12px 24px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.hero-actions .btn-orange:hover {
+  background: #e05307;
+  border-color: #e05307;
 }
 
 /* Partner Trust Logos */
 .hero-partners {
   display: flex;
   align-items: center;
-  gap: 2.5rem;
-  opacity: 0.85;
+  gap: 26px;
 }
 
-.partner-logo-item {
+.partner-generac {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
 }
 
-.partner-title {
+.generac-badge {
+  background: #ffffff;
+  color: #000000;
   font-family: var(--font-heading);
   font-size: 18px;
-  font-weight: 400;
   letter-spacing: 1px;
-  line-height: 1;
-  color: #ffffff;
+  padding: 1px 8px;
+  line-height: 1.1;
+  font-weight: 900;
 }
 
-.partner-subtitle {
-  font-size: 9px;
+.generac-sub {
+  font-size: 8.5px;
   letter-spacing: 1.5px;
-  color: #94a3b8;
+  color: #ffffff;
+  font-weight: 700;
   text-transform: uppercase;
-  font-weight: 600;
-  margin-top: 3px;
+}
+
+.partner-canter-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .partner-canter {
   font-family: "Brush Script MT", cursive, sans-serif;
-  font-size: 22px;
+  font-size: 26px;
   color: #ffffff;
+  line-height: 1;
+}
+
+.canter-sub {
+  font-size: 7.5px;
+  letter-spacing: 2px;
+  color: #cbd5e1;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-top: 2px;
 }
 
 /* --------------------------------------------------------------------------
-   HERO RIGHT VISUAL & FOUNDER CARD
+   HERO RIGHT VISUAL & FOUNDER CARD (Kyle Ruestman Portrait)
    -------------------------------------------------------------------------- */
 .hero-visual-wrapper {
-  position: relative;
+  position: absolute;
+  bottom: 0;
+  right: clamp(140px, 20vw, 320px);
+  width: 370px;
+  max-width: 42vw;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: flex-end;
+  z-index: 3;
+  pointer-events: none;
 }
 
 .hero-image-frame {
   position: relative;
-  max-width: 520px;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 }
 
 .hero-tech-img {
   width: 100%;
   height: auto;
+  max-height: 520px;
+  object-fit: contain;
+  object-position: bottom center;
   display: block;
-  filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.5));
-  mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.5));
 }
 
 /* Founder Badge with Slanted Cutout */
 .founder-badge-slanted {
   position: absolute;
-  bottom: 25px;
-  right: 20px;
-  background-color: var(--color-secondary);
-  border-left: 4px solid var(--color-primary);
-  border-top: 2px solid var(--color-primary);
-  padding: 10px 24px 10px 18px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
-  clip-path: polygon(10px 0%, 100% 0%, 100% 100%, 0% 100%);
+  bottom: 24px;
+  right: -25px;
+  background-color: #121622;
+  border-left: 3px solid #fb6514;
+  border-top: 2px solid #fb6514;
+  border-bottom: 4px solid #fb6514;
+  border-right: 4px solid #fb6514;
+  padding: 8px 22px 8px 16px;
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 100%, 0 100%);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.65);
   z-index: 5;
+  white-space: nowrap;
+  pointer-events: auto;
 }
 
 .founder-name {
   font-family: var(--font-heading);
-  font-size: 18px;
+  font-size: 16px;
   color: #ffffff;
   letter-spacing: 0.5px;
   line-height: 1.1;
   text-transform: uppercase;
+  font-weight: 400 !important;
 }
 
 .founder-role {
-  font-size: 11px;
-  font-style: italic;
-  color: var(--color-primary);
-  margin-top: 2px;
+  font-size: 10.5px;
+  color: #94a3b8;
+  margin-top: 3px;
   font-weight: 500;
+  letter-spacing: 0.2px;
 }
 
 /* ==========================================================================
-   QUICK ESTIMATE BAR (Exact Match with Full-Height White Slanted Box)
+   QUICK ESTIMATE BAR
    ========================================================================== */
 .estimate-bar-section {
   background-color: var(--color-primary);
@@ -342,7 +433,7 @@
 }
 
 .guarantee-icon-wrapper {
-  transform: skewX(20deg); /* Unskew the icon */
+  transform: skewX(20deg);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -371,7 +462,7 @@
   padding: 12px 0;
 }
 
-/* Quick Lead Form (Exact Inputs: Name, Email, Number, Zip Code, SUBMIT) */
+/* Quick Lead Form */
 .estimate-form {
   display: flex;
   align-items: center;
@@ -440,170 +531,255 @@
 }
 
 /* ==========================================================================
-   CERTIFICATIONS & PARTNER BRAND TICKER STRIP
+   MOBILE & TABLET RESPONSIVE (Pixel-Matched to media_1789623406602.png)
    ========================================================================== */
-.certifications-ticker-section {
-  background-color: #121620;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 24px 0;
-  position: relative;
-  overflow: hidden;
-}
-
-.certifications-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-}
-
-.ticker-vertical-label {
-  font-family: var(--font-heading);
-  font-size: 14px;
-  color: #64748b;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  border-right: 1px solid rgba(255, 255, 255, 0.15);
-  padding-right: 20px;
-  white-space: nowrap;
-}
-
-.ticker-logos-grid {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  gap: 2.5rem;
-  flex-wrap: wrap;
-}
-
-.ticker-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0.85;
-  transition: opacity var(--transition);
-}
-
-.ticker-item:hover {
-  opacity: 1;
-}
-
-.ticker-logo-text {
-  font-family: var(--font-heading);
-  font-size: 22px;
-  letter-spacing: 1px;
-  color: #ffffff;
-  text-transform: uppercase;
-}
-
-.ticker-logo-goodman {
-  font-family: var(--font-body);
-  font-weight: 800;
-  font-size: 20px;
-  color: #ffffff;
-  letter-spacing: 0.5px;
-}
-
-.ticker-logo-coleman {
-  font-family: var(--font-body);
-  font-weight: 700;
-  font-style: italic;
-  font-size: 22px;
-  color: #ffffff;
-}
-
-.ticker-logo-bbb {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-family: var(--font-body);
-  font-weight: 800;
-  font-size: 18px;
-  color: #ffffff;
-  border: 1.5px solid #ffffff;
-  padding: 2px 8px;
-}
-
-.ticker-logo-acca {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-family: var(--font-heading);
-  font-size: 22px;
-  color: #ffffff;
-}
-
-.ticker-logo-canter {
-  font-family: "Brush Script MT", cursive, sans-serif;
-  font-size: 26px;
-  color: #ffffff;
-}
-
-.ticker-logo-amana {
-  font-family: var(--font-body);
-  font-weight: 800;
-  font-size: 20px;
-  letter-spacing: 1px;
-  color: #ffffff;
-}
-
-/* Responsive Hero & Ticker */
 @media (max-width: 991px) {
+  .hero-section {
+    background-image: url('../assets/images/mobile-hero-bg.webp');
+    background-position: center top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #1a0f0d;
+    padding: 24px 0 0 0;
+    min-height: auto;
+    overflow: hidden;
+  }
+
   .hero-container {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: auto;
+    padding: 0 16px;
   }
+
   .hero-content {
-    padding-bottom: 20px;
+    max-width: 100%;
+    padding-bottom: 0;
+    text-align: left;
+    z-index: 4;
   }
+
+  .hero-badge-acca {
+    margin-bottom: 10px;
+    gap: 10px;
+  }
+
+  .acca-brand-name {
+    font-size: 18px;
+  }
+
+  .hero-badge-text {
+    font-size: 11px;
+  }
+
+  .hero-title {
+    font-size: clamp(22px, 6.6vw, 30px) !important;
+    line-height: 1.08 !important;
+    margin-bottom: 12px;
+    text-align: left;
+  }
+
+  .hero-title-line {
+    white-space: normal;
+  }
+
+  .hero-desktop-break {
+    display: none;
+  }
+
+  .hero-il {
+    margin-left: 5px;
+  }
+
+  .hero-description {
+    font-size: 13px;
+    line-height: 1.45;
+    color: #ffffff;
+    max-width: 100%;
+    margin-bottom: 14px;
+    text-align: left;
+  }
+
+  .hero-bullets {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 14px;
+    margin-bottom: 16px;
+    justify-content: flex-start;
+  }
+
+  .hero-bullet-item {
+    font-size: 11px;
+    color: #ffffff;
+    white-space: nowrap;
+    gap: 6px;
+  }
+
+  .hero-check-circle {
+    width: 14px;
+    height: 14px;
+  }
+
+  .hero-ratings-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+    flex-wrap: nowrap;
+  }
+
+  .rating-box {
+    gap: 8px;
+    align-items: center;
+  }
+
+  .rating-divider-line {
+    display: block;
+    width: 1px;
+    height: 24px;
+    background-color: rgba(255, 255, 255, 0.4);
+    margin: 0 4px;
+    flex-shrink: 0;
+  }
+
+  .rating-icon-circle {
+    width: 28px;
+    height: 28px;
+  }
+
+  .rating-icon-circle svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .rating-stars svg {
+    width: 11px;
+    height: 11px;
+  }
+
+  .rating-text {
+    font-size: 10px;
+    white-space: nowrap;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+    width: 100%;
+    flex-wrap: nowrap;
+  }
+
+  .btn-hero-outline,
+  .hero-actions .btn-orange {
+    flex: 1 1 0;
+    padding: 10px 12px;
+    font-size: 11.5px;
+    letter-spacing: 0.3px;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .hero-partners {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 12px;
+  }
+
+  .partner-generac .generac-badge {
+    font-size: 16px;
+    padding: 1px 7px;
+  }
+
+  .partner-generac .generac-sub {
+    font-size: 7.5px;
+  }
+
+  .partner-canter {
+    font-size: 24px;
+  }
+
+  .canter-sub {
+    font-size: 6.5px;
+  }
+
   .hero-visual-wrapper {
+    position: relative;
+    right: auto;
+    bottom: 0;
+    left: auto;
+    width: 100%;
+    max-width: 330px;
+    margin: 0 auto;
+    display: flex;
     justify-content: center;
+    align-items: flex-end;
+    margin-top: 4px;
+    z-index: 3;
   }
+
   .hero-image-frame {
-    max-width: 440px;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
   }
+
+  .hero-tech-img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: contain;
+    object-position: bottom center;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
+  }
+
+  .founder-badge-slanted {
+    display: none;
+  }
+
   .estimate-bar-container {
     flex-direction: column;
     align-items: flex-start;
   }
+
   .estimate-form {
     width: 100%;
   }
-  .ticker-vertical-label {
-    display: none;
-  }
-  .ticker-logos-grid {
-    justify-content: center;
-    gap: 2rem;
-  }
-}
 
-@media (max-width: 576px) {
-  .hero-actions {
-    flex-direction: column;
-    width: 100%;
-  }
-  .hero-actions .btn {
-    width: 100%;
-  }
-  .hero-ratings-row {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-  }
-  .hero-partners {
-    flex-wrap: wrap;
-    gap: 1.5rem;
-  }
   .estimate-input-field {
     flex: 1 1 100%;
   }
+
   .estimate-submit-btn {
     width: 100%;
   }
-  .ticker-logos-grid {
-    gap: 1.5rem;
+}
+
+@media (max-width: 480px) {
+  .hero-container {
+    padding: 0 14px;
+  }
+
+  .hero-title {
+    font-size: clamp(21px, 6.8vw, 27px) !important;
+  }
+
+  .hero-bullet-item {
+    font-size: 10.5px;
+  }
+
+  .btn-hero-outline,
+  .hero-actions .btn-orange {
+    font-size: 11px;
+    padding: 10px 8px;
+  }
+
+  .hero-visual-wrapper {
+    max-width: 310px;
   }
 }
