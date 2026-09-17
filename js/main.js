@@ -3,26 +3,64 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Mobile Navigation Drawer Toggle
+  // Mobile Navigation Drawer Toggle & Backdrop
   const mobileToggle = document.getElementById('mobileNavToggle');
   const navMenu = document.getElementById('mainNav');
+  const navBackdrop = document.getElementById('navBackdrop');
+
+  function closeMobileNav() {
+    if (mobileToggle) mobileToggle.classList.remove('active');
+    if (navMenu) navMenu.classList.remove('active');
+    document.body.classList.remove('nav-open');
+  }
 
   if (mobileToggle && navMenu) {
     mobileToggle.addEventListener('click', () => {
-      mobileToggle.classList.toggle('active');
-      navMenu.classList.toggle('active');
-      document.body.classList.toggle('nav-open');
+      const isOpen = navMenu.classList.contains('active');
+      if (isOpen) {
+        closeMobileNav();
+      } else {
+        mobileToggle.classList.add('active');
+        navMenu.classList.add('active');
+        document.body.classList.add('nav-open');
+      }
     });
 
-    // Mobile dropdown accordion toggles
-    document.querySelectorAll('.nav-item.has-dropdown > .nav-item-link').forEach(dropdownLink => {
-      dropdownLink.addEventListener('click', (e) => {
-        if (window.innerWidth <= 991) {
-          e.preventDefault();
-          const parentItem = dropdownLink.parentElement;
+    if (navBackdrop) {
+      navBackdrop.addEventListener('click', closeMobileNav);
+    }
+
+    // Unified Mobile Menu Delegation
+    navMenu.addEventListener('click', (e) => {
+      if (window.innerWidth > 991) return;
+
+      // 1. Check if clicked a Tier-1 dropdown toggle (ABOUT US, SERVICES, SERVICE AREA)
+      const dropdownToggle = e.target.closest('.nav-item.has-dropdown > .nav-item-link');
+      if (dropdownToggle) {
+        e.preventDefault();
+        const parentItem = dropdownToggle.closest('.nav-item');
+        if (parentItem) {
           parentItem.classList.toggle('mobile-open');
         }
-      });
+        return;
+      }
+
+      // 2. Check if clicked a Tier-2 flyout toggle (HEATING, COOLING, DUCTWORK)
+      const flyoutToggle = e.target.closest('.dropdown-item.has-flyout > .dropdown-link');
+      if (flyoutToggle) {
+        e.preventDefault();
+        const parentFlyout = flyoutToggle.closest('.dropdown-item');
+        if (parentFlyout) {
+          parentFlyout.classList.toggle('flyout-open');
+        }
+        return;
+      }
+
+      // 3. If clicked any standard navigational leaf link or button
+      const navLink = e.target.closest('a');
+      if (navLink) {
+        closeMobileNav();
+      }
     });
   }
 
